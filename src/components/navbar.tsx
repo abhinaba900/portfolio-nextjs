@@ -96,7 +96,19 @@ export default function Navbar() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.8 }}
           >
-            <Button>Resume</Button>
+            <Button
+              // dark button
+              size="sm"
+              className="hidden md:inline-flex"
+              onClick={() =>
+                window.open(
+                  "https://drive.google.com/file/d/1Kn-L3n12I0NiCm-id8tLc-OEi_pSRIx2/view?usp=sharing",
+                  "_blank"
+                )
+              }
+            >
+              Resume
+            </Button>
           </motion.div>
         </div>
 
@@ -137,7 +149,17 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <Button className="w-full">Resume</Button>
+            <Button
+              className="w-full"
+              onClick={() =>
+                window.open(
+                  "https://drive.google.com/file/d/1Kn-L3n12I0NiCm-id8tLc-OEi_pSRIx2/view?usp=sharing",
+                  "_blank"
+                )
+              }
+            >
+              Resume
+            </Button>
           </div>
         </motion.div>
       )}
