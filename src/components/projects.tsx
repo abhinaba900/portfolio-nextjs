@@ -58,7 +58,7 @@ export default function Projects() {
       description:
         "I am practicing the UI and it has dynamic dropdown and Stack..",
       image:
-        "https://private-user-images.githubusercontent.com/151936189/446925783-3f20c822-98c7-4a85-baa8-03d2e070c343.jpeg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgwMjE1NjIsIm5iZiI6MTc0ODAyMTI2MiwicGF0aCI6Ii8xNTE5MzYxODkvNDQ2OTI1NzgzLTNmMjBjODIyLTk4YzctNGE4NS1iYWE4LTAzZDJlMDcwYzM0My5qcGVnP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI1MDUyMyUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNTA1MjNUMTcyNzQyWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9YWNjZTY4MTkzNzkzZWVlZmRlNWJkNzE1YTY0MDJjMjdmMDZjZTRhNGM0MzA0YWQ4NGIxY2VmZmQyYTRlYWY2ZCZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.VsZ7IpYGie8x-Hz4kp5nGSvRM2DggLMFcIdiC3q310I",
+        "https://github.com/abhinaba900/Portpolio1/blob/main/src/image/WhatsApp%20Image%202025-05-23%20at%2013.49.15%20(1).jpeg?raw=true",
       tags: ["Flutter", "Dart"],
       category: "mobile",
       github: "https://github.com/abhinaba900/go_moon_androaid_app",
