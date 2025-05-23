@@ -58,15 +58,17 @@ export default function Hero() {
             variants={item}
             className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text  bg-gradient-to-r from-primary to-secondary"
           >
-            Building digital experiences that matter
+            Let's Build Something Meaningful Together
           </motion.h1>
           <motion.p
             variants={item}
             className="text-lg md:text-xl text-foreground/80 mb-8"
           >
-            I'm Abhinaba Jana, a passionate full-stack developer specializing in
-            creating modern, responsive, and user-friendly web applications with
-            cutting-edge technologies.
+            I'm Abhinaba Jana — a dedicated full-stack developer with a passion
+            for crafting responsive, user-focused web applications using modern,
+            scalable technologies. I'm actively seeking new opportunities where
+            I can contribute, grow, and collaborate on digital experiences that
+            truly make an impact.
           </motion.p>
           <motion.div
             variants={item}
