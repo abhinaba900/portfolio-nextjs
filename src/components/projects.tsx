@@ -1,98 +1,82 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef, useState } from "react"
-import Image from "next/image"
-import { Button } from "@/src/components/ui/button"
-import { Card, CardContent } from "@/src/components/ui/card"
-import { Tabs, TabsList, TabsTrigger } from "@/src/components/ui/tabs"
-import { ExternalLink, Github } from "lucide-react"
-import Link from "next/link"
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import Image from "next/image";
+import { Button } from "@/src/components/ui/button";
+import { Card, CardContent } from "@/src/components/ui/card";
+import { Tabs, TabsList, TabsTrigger } from "@/src/components/ui/tabs";
+import { ExternalLink, Github } from "lucide-react";
+import Link from "next/link";
 
 export default function Projects() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const [activeTab, setActiveTab] = useState("all")
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [activeTab, setActiveTab] = useState("all");
 
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "Replica of Costco.com",
       description:
-        "A full-featured e-commerce platform with product management, cart functionality, payment processing, and order tracking.",
-      image: "/placeholder.svg?height=600&width=800",
-      tags: ["Next.js", "TypeScript", "Stripe", "MongoDB"],
+        "Using advanced HTML, CSS, JavaScript, and web frameworks, I accurately recreated Costco's website.Focused on the layout, navigation, and interactive elements.Emphasized mobile responsiveness and cross-browser compatibility.",
+      image:
+        "https://abhinaba900.github.io/Portpolio1/static/media/Screenshot%202024-02-19%20191850.5eb64c06829a8a106535.png",
+      tags: ["React.js", "Express.js", "MongoDB"],
       category: "fullstack",
-      github: "https://github.com",
-      demo: "https://example.com",
+      github: "https://github.com/abhinaba900/costco.com",
+      demo: "https://costco-clone-eight.vercel.app/",
     },
     {
       id: 2,
-      title: "AI Content Generator",
+      title: "Replica of airtable.com",
       description:
-        "An AI-powered application that generates marketing copy, blog posts, and social media content based on user prompts.",
-      image: "/placeholder.svg?height=600&width=800",
-      tags: ["React", "Node.js", "OpenAI", "TailwindCSS"],
-      category: "ai",
-      github: "https://github.com",
-      demo: "https://example.com",
+        "Revolutionizing work management with its dynamic blend of spreadsheet and database functionalities.Empowering seamless collaboration among team members.Enabling structured organization of data and tasks.",
+      image:
+        "https://abhinaba900.github.io/Portpolio1/static/media/airtable1.3eab62b1b01e0842fa0e.png",
+      tags: ["React", "Chakra UI"],
+      category: "frontend",
+      github: "https://github.com/abhinaba1999/airtable.com",
+      demo: "https://airtable-com-eight.vercel.app/",
     },
     {
       id: 3,
       title: "Task Management Dashboard",
       description:
-        "A collaborative task management tool with real-time updates, team assignments, and progress tracking.",
-      image: "/placeholder.svg?height=600&width=800",
-      tags: ["React", "Firebase", "Redux", "Framer Motion"],
+        "Created a feature-rich e-commerce platform focusing on enhancing user experience using React and JavaScript.Implemented advanced filtering and search functionalities to enhance product discovery and user navigation.",
+      image:
+        "https://github.com/abhinaba900/Portpolio1/blob/main/src/image/Screenshot%202025-05-23%20220248.png?raw=true",
+      tags: ["React"],
       category: "frontend",
-      github: "https://github.com",
-      demo: "https://example.com",
+      github: "https://github.com/abhinaba900/meesho-clone__",
+      demo: "https://meeso-clone.web.app/",
     },
     {
       id: 4,
-      title: "Fitness Tracking App",
+      title: "Go Moon",
       description:
-        "A mobile-first web application for tracking workouts, nutrition, and fitness goals with data visualization.",
-      image: "/placeholder.svg?height=600&width=800",
+        "I am practicing the UI and it has dynamic dropdown and Stack..",
+      image:
+        "https://private-user-images.githubusercontent.com/151936189/446925783-3f20c822-98c7-4a85-baa8-03d2e070c343.jpeg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgwMjE1NjIsIm5iZiI6MTc0ODAyMTI2MiwicGF0aCI6Ii8xNTE5MzYxODkvNDQ2OTI1NzgzLTNmMjBjODIyLTk4YzctNGE4NS1iYWE4LTAzZDJlMDcwYzM0My5qcGVnP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI1MDUyMyUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNTA1MjNUMTcyNzQyWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9YWNjZTY4MTkzNzkzZWVlZmRlNWJkNzE1YTY0MDJjMjdmMDZjZTRhNGM0MzA0YWQ4NGIxY2VmZmQyYTRlYWY2ZCZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.VsZ7IpYGie8x-Hz4kp5nGSvRM2DggLMFcIdiC3q310I",
       tags: ["React Native", "GraphQL", "D3.js", "MongoDB"],
       category: "mobile",
-      github: "https://github.com",
-      demo: "https://example.com",
+      github: "https://github.com/abhinaba900/go_moon_androaid_app",
+      demo: "https://github.com/abhinaba900/go_moon_androaid_app/releases/tag/flutter",
     },
-    {
-      id: 5,
-      title: "Real Estate Marketplace",
-      description:
-        "A platform connecting property buyers, sellers, and agents with advanced search, filtering, and messaging.",
-      image: "/placeholder.svg?height=600&width=800",
-      tags: ["Next.js", "PostgreSQL", "Prisma", "Google Maps API"],
-      category: "fullstack",
-      github: "https://github.com",
-      demo: "https://example.com",
-    },
-    {
-      id: 6,
-      title: "Developer Portfolio Template",
-      description:
-        "A customizable portfolio template for developers with animations, dark mode, and content management.",
-      image: "/placeholder.svg?height=600&width=800",
-      tags: ["React", "TailwindCSS", "Framer Motion", "Contentful"],
-      category: "frontend",
-      github: "https://github.com",
-      demo: "https://example.com",
-    },
-  ]
+  ];
 
-  const filteredProjects = activeTab === "all" ? projects : projects.filter((project) => project.category === activeTab)
+  const filteredProjects =
+    activeTab === "all"
+      ? projects
+      : projects.filter((project) => project.category === activeTab);
 
   const categories = [
     { value: "all", label: "All Projects" },
     { value: "frontend", label: "Frontend" },
     { value: "fullstack", label: "Full Stack" },
     { value: "mobile", label: "Mobile" },
-    { value: "ai", label: "AI/ML" },
-  ]
+  ];
 
   return (
     <section id="projects" className="py-20" ref={ref}>
@@ -106,8 +90,8 @@ export default function Projects() {
           <h2 className="text-3xl font-bold mb-4">My Projects</h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
           <p className="text-foreground/80 max-w-2xl mx-auto">
-            Explore my recent projects showcasing my expertise in web development, mobile applications, and innovative
-            solutions.
+            Explore my recent projects showcasing my expertise in web
+            development, mobile applications, and innovative solutions.
           </p>
         </motion.div>
 
@@ -117,7 +101,12 @@ export default function Projects() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mb-12"
         >
-          <Tabs defaultValue="all" value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <Tabs
+            defaultValue="all"
+            value={activeTab}
+            onValueChange={setActiveTab}
+            className="w-full"
+          >
             <TabsList className="mx-auto flex flex-wrap justify-center h-auto bg-transparent space-x-2 space-y-2 sm:space-y-0">
               {categories.map((category) => (
                 <TabsTrigger
@@ -151,13 +140,21 @@ export default function Projects() {
                   />
                   <div className="absolute inset-0 bg-black/60 dark:bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                     <Button size="sm" variant="secondary" asChild>
-                      <Link href={project.github} target="_blank" rel="noopener noreferrer">
+                      <Link
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Github className="mr-2 h-4 w-4" />
                         Code
                       </Link>
                     </Button>
                     <Button size="sm" asChild>
-                      <Link href={project.demo} target="_blank" rel="noopener noreferrer">
+                      <Link
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <ExternalLink className="mr-2 h-4 w-4" />
                         Demo
                       </Link>
@@ -166,10 +163,15 @@ export default function Projects() {
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-foreground/70 mb-4">{project.description}</p>
+                  <p className="text-foreground/70 mb-4">
+                    {project.description}
+                  </p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
-                      <span key={tag} className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
+                      <span
+                        key={tag}
+                        className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                      >
                         {tag}
                       </span>
                     ))}
@@ -181,5 +183,5 @@ export default function Projects() {
         </div>
       </div>
     </section>
-  )
+  );
 }
