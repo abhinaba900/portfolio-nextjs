@@ -39,19 +39,19 @@ export default function Contact() {
     {
       icon: <Mail className="h-6 w-6 text-primary" />,
       title: "Email",
-      value: "john.doe@example.com",
-      link: "mailto:john.doe@example.com",
+      value: "abhinabajana900@gmail.com",
+      link: "mailto:abhinabajana900@gmail.com",
     },
     {
       icon: <Phone className="h-6 w-6 text-primary" />,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      value: "+91 9831206232",
+      link: "tel:+919831206232",
     },
     {
       icon: <MapPin className="h-6 w-6 text-primary" />,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Kolkata, India",
       link: null,
     },
   ]
