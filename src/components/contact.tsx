@@ -1,39 +1,39 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef, useState } from "react"
-import { Button } from "@/src/components/ui/button"
-import { Input } from "@/src/components/ui/input"
-import { Textarea } from "@/src/components/ui/textarea"
-import { Card, CardContent } from "@/src/components/ui/card"
-import { Mail, MapPin, Phone, Send } from "lucide-react"
-import { useToast } from "@/src/hooks/use-toast"
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import { Button } from "@/src/components/ui/button";
+import { Input } from "@/src/components/ui/input";
+import { Textarea } from "@/src/components/ui/textarea";
+import { Card, CardContent } from "@/src/components/ui/card";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { useToast } from "@/src/hooks/use-toast";
 
 export default function Contact() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const { toast } = useToast()
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    await new Promise((resolve) => setTimeout(resolve, 1500));
 
     toast({
       title: "Message sent!",
       description: "Thanks for reaching out. I'll get back to you soon.",
-    })
+    });
 
-    setIsSubmitting(false)
+    setIsSubmitting(false);
     // Reset form
-    e.currentTarget.reset()
-  }
+    e.currentTarget.reset();
+  };
 
   const contactInfo = [
     {
@@ -54,10 +54,14 @@ export default function Contact() {
       value: "Kolkata, India",
       link: null,
     },
-  ]
+  ];
 
   return (
-    <section id="contact" className="py-20 bg-muted/50 dark:bg-muted/20" ref={ref}>
+    <section
+      id="contact"
+      className="py-20 bg-muted/50 dark:bg-muted/20"
+      ref={ref}
+    >
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -68,8 +72,10 @@ export default function Contact() {
           <h2 className="text-3xl font-bold mb-4">Get In Touch</h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
           <p className="text-foreground/80 max-w-2xl mx-auto">
-            Have a project in mind or want to discuss potential opportunities? Feel free to reach out. I'm always open
-            to new ideas and collaborations.
+            Have an opportunity or project in mind? I’m actively exploring new
+            roles and open to collaborations where I can contribute, learn, and
+            grow. Whether it’s a full-time position, freelance project, or just
+            a conversation about possibilities, I’d love to connect.
           </p>
         </motion.div>
 
@@ -88,7 +94,10 @@ export default function Contact() {
                   </div>
                   <h3 className="text-lg font-semibold mb-2">{info.title}</h3>
                   {info.link ? (
-                    <a href={info.link} className="text-foreground/70 hover:text-primary transition-colors">
+                    <a
+                      href={info.link}
+                      className="text-foreground/70 hover:text-primary transition-colors"
+                    >
                       {info.value}
                     </a>
                   ) : (
@@ -108,7 +117,9 @@ export default function Contact() {
         >
           <Card className="border-primary/10 dark:border-primary/5">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-6 text-center">Send Me a Message</h3>
+              <h3 className="text-2xl font-bold mb-6 text-center">
+                Send Me a Message
+              </h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
@@ -121,22 +132,40 @@ export default function Contact() {
                     <label htmlFor="email" className="text-sm font-medium">
                       Email
                     </label>
-                    <Input id="email" type="email" placeholder="Your email" required />
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="Your email"
+                      required
+                    />
                   </div>
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="subject" className="text-sm font-medium">
                     Subject
                   </label>
-                  <Input id="subject" placeholder="Subject of your message" required />
+                  <Input
+                    id="subject"
+                    placeholder="Subject of your message"
+                    required
+                  />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-medium">
                     Message
                   </label>
-                  <Textarea id="message" placeholder="Your message" rows={6} required />
+                  <Textarea
+                    id="message"
+                    placeholder="Your message"
+                    rows={6}
+                    required
+                  />
                 </div>
-                <Button type="submit" className="w-full" disabled={isSubmitting}>
+                <Button
+                  type="submit"
+                  className="w-full"
+                  disabled={isSubmitting}
+                >
                   {isSubmitting ? (
                     <span className="flex items-center">
                       <svg
@@ -174,5 +203,5 @@ export default function Contact() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
