@@ -17,7 +17,7 @@ export default function Footer() {
               className="flex items-center gap-2 text-xl font-bold mb-4"
             >
               <Frame className="w-6 h-6 text-primary" />
-              <span>John Doe</span>
+              <span>Abhinaba Jana</span>
             </Link>
             <p className="text-foreground/70 mb-6 max-w-md">
               Building exceptional digital experiences with modern web
