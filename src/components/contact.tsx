@@ -1,38 +1,44 @@
 "use client";
 
 import type React from "react";
-
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
+import emailjs from "emailjs-com";
+import { motion, useInView } from "framer-motion";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
 import { Textarea } from "@/src/components/ui/textarea";
 import { Card, CardContent } from "@/src/components/ui/card";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { useToast } from "@/src/hooks/use-toast";
+import toast from "react-hot-toast";
 
 export default function Contact() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const { toast } = useToast();
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      await emailjs.sendForm(
+        "service_398aesa", // ✨ Replace with your EmailJS service ID
+        "template_2hb8ofn", // ✨ Replace with your EmailJS template ID
+        formRef.current!,
+        "yGNx9iaL7Jq_4h8Rr" // ✨ Replace with your EmailJS public key
+      );
 
-    toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
+      toast.success("Message sent successfully!");
 
-    setIsSubmitting(false);
-    // Reset form
-    e.currentTarget.reset();
+      formRef.current?.reset();
+    } catch (error) {
+      console.error("Email sending failed:", error);
+      toast.error("Failed to send message. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -60,12 +66,12 @@ export default function Contact() {
     <section
       id="contact"
       className="py-20 bg-muted/50 dark:bg-muted/20"
-      ref={ref}
+      ref={sectionRef}
     >
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
@@ -73,9 +79,8 @@ export default function Contact() {
           <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
           <p className="text-foreground/80 max-w-2xl mx-auto">
             Have an opportunity or project in mind? I’m actively exploring new
-            roles and open to collaborations where I can contribute, learn, and
-            grow. Whether it’s a full-time position, freelance project, or just
-            a conversation about possibilities, I’d love to connect.
+            roles and open to collaborations. Whether it’s a full-time position,
+            freelance project, or just a conversation, I’d love to connect.
           </p>
         </motion.div>
 
@@ -84,7 +89,7 @@ export default function Contact() {
             <motion.div
               key={info.title}
               initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
             >
               <Card className="h-full border-primary/10 dark:border-primary/5 hover:shadow-md transition-shadow">
@@ -111,7 +116,7 @@ export default function Contact() {
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.5 }}
           className="max-w-3xl mx-auto mt-16"
         >
@@ -120,13 +125,18 @@ export default function Contact() {
               <h3 className="text-2xl font-bold mb-6 text-center">
                 Send Me a Message
               </h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium">
                       Name
                     </label>
-                    <Input id="name" placeholder="Your name" required />
+                    <Input
+                      id="name"
+                      name="name"
+                      placeholder="Your name"
+                      required
+                    />
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="email" className="text-sm font-medium">
@@ -134,6 +144,7 @@ export default function Contact() {
                     </label>
                     <Input
                       id="email"
+                      name="email"
                       type="email"
                       placeholder="Your email"
                       required
@@ -146,6 +157,7 @@ export default function Contact() {
                   </label>
                   <Input
                     id="subject"
+                    name="subject"
                     placeholder="Subject of your message"
                     required
                   />
@@ -156,6 +168,7 @@ export default function Contact() {
                   </label>
                   <Textarea
                     id="message"
+                    name="message"
                     placeholder="Your message"
                     rows={6}
                     required
@@ -185,7 +198,7 @@ export default function Contact() {
                         <path
                           className="opacity-75"
                           fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
                         ></path>
                       </svg>
                       Sending...
