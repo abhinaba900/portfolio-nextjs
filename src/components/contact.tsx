@@ -23,10 +23,25 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
+      const adminMaliDatas = {
+        name: formRef.current?.name?.value,
+        email: "abhinabajana900@gmail.com",
+        subject: formRef.current?.subject.value,
+        message: formRef.current?.message.value,
+      };
+
+
       await emailjs.sendForm(
         "service_398aesa", // ✨ Replace with your EmailJS service ID
         "template_2hb8ofn", // ✨ Replace with your EmailJS template ID
         formRef.current!,
+        "yGNx9iaL7Jq_4h8Rr" // ✨ Replace with your EmailJS public key
+      );
+
+      await emailjs.send(
+        "service_398aesa", // ✨ Replace with your EmailJS service ID
+        "template_2hb8ofn", // ✨ Replace with your EmailJS template ID
+        adminMaliDatas,
         "yGNx9iaL7Jq_4h8Rr" // ✨ Replace with your EmailJS public key
       );
 
