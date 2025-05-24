@@ -107,9 +107,7 @@ export default function Footer() {
           <p className="text-foreground/60 text-sm">
             © {currentYear} Abhinaba Jana. All rights reserved.
           </p>
-          <p className="text-foreground/60 text-sm mt-2 md:mt-0">
-            Designed & Built with ❤️
-          </p>
+          <p className="text-foreground/60 text-sm mt-2 md:mt-0"></p>
         </div>
       </div>
     </footer>
