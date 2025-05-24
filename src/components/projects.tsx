@@ -64,6 +64,17 @@ export default function Projects() {
       github: "https://github.com/abhinaba900/go_moon_androaid_app",
       demo: "https://github.com/abhinaba900/go_moon_androaid_app/releases/tag/flutter",
     },
+    {
+      id: 5,
+      title: "Taskly App",
+      description: `Taskly is a simple and lightweight task manager app that helps you stay organized. You can easily add new tasks, tap on a task to mark it as completed (it shows a strikethrough), and long press to delete a task. It's perfect for managing your daily to-dos or keeping track of things in a clean and easy way.`,
+      image:
+        "https://github.com/abhinaba900/Portpolio1/blob/main/src/image/Screenshot%202025-05-24%20130721.png?raw=true",
+      tags: ["Flutter", "Dart", "Hive"],
+      category: "mobile",
+      github: "https://github.com/abhinaba900/taskly_app",
+      demo: "https://github.com/abhinaba900/taskly_app/releases/tag/taskly",
+    },
   ];
 
   const filteredProjects =

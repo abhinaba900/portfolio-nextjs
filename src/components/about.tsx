@@ -43,7 +43,7 @@ export default function About() {
     {
       category: "Mobile",
       icon: <Smartphone className="h-6 w-6 text-primary" />,
-      technologies: ["Flutter"],
+      technologies: ["Flutter","Dart"],
     },
     {
       category: "DevOps",
