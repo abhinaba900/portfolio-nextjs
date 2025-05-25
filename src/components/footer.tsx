@@ -102,13 +102,6 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-
-        <div className="border-t border-border mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-foreground/60 text-sm">
-            © {currentYear} Abhinaba Jana. All rights reserved.
-          </p>
-          <p className="text-foreground/60 text-sm mt-2 md:mt-0"></p>
-        </div>
       </div>
     </footer>
   );
