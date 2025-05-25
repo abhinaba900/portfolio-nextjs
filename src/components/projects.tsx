@@ -42,7 +42,7 @@ export default function Projects() {
     },
     {
       id: 3,
-      title: "Task Management Dashboard",
+      title: "Meesho Clone",
       description:
         "Created a feature-rich e-commerce platform focusing on enhancing user experience using React and JavaScript.Implemented advanced filtering and search functionalities to enhance product discovery and user navigation.",
       image:
