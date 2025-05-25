@@ -61,6 +61,18 @@ export default function Footer() {
               <li>
                 <Link
                   href="#home"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById("home");
+                    if (el) {
+                      const yOffset = -0; // adjust this based on your fixed navbar height
+                      const y =
+                        el.getBoundingClientRect().top +
+                        window.pageYOffset +
+                        yOffset;
+                      window.scrollTo({ top: y, behavior: "smooth" });
+                    }
+                  }}
                   className="text-foreground/70 hover:text-primary transition-colors"
                 >
                   Home
@@ -69,6 +81,18 @@ export default function Footer() {
               <li>
                 <Link
                   href="#about"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById("about");
+                    if (el) {
+                      const yOffset = -0; // adjust this based on your fixed navbar height
+                      const y =
+                        el.getBoundingClientRect().top +
+                        window.pageYOffset +
+                        yOffset;
+                      window.scrollTo({ top: y, behavior: "smooth" });
+                    }
+                  }}
                   className="text-foreground/70 hover:text-primary transition-colors"
                 >
                   About
@@ -77,6 +101,18 @@ export default function Footer() {
               <li>
                 <Link
                   href="#projects"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById("projects");
+                    if (el) {
+                      const yOffset = -0; // adjust this based on your fixed navbar height
+                      const y =
+                        el.getBoundingClientRect().top +
+                        window.pageYOffset +
+                        yOffset;
+                      window.scrollTo({ top: y, behavior: "smooth" });
+                    }
+                  }}
                   className="text-foreground/70 hover:text-primary transition-colors"
                 >
                   Projects
@@ -85,6 +121,18 @@ export default function Footer() {
               <li>
                 <Link
                   href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById("contact");
+                    if (el) {
+                      const yOffset = -0; // adjust this based on your fixed navbar height
+                      const y =
+                        el.getBoundingClientRect().top +
+                        window.pageYOffset +
+                        yOffset;
+                      window.scrollTo({ top: y, behavior: "smooth" });
+                    }
+                  }}
                   className="text-foreground/70 hover:text-primary transition-colors"
                 >
                   Contact

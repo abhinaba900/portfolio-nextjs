@@ -78,7 +78,21 @@ export default function Navbar() {
               <Link
                 href={link.href}
                 className={linkClass(link.href)}
-                onClick={() => setActiveLink(link.href)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  const targetId = link.href.replace("#", "");
+                  const el = document.getElementById(targetId);
+                  if (el) {
+                    const yOffset = -0; // adjust based on your navbar height
+                    const y =
+                      el.getBoundingClientRect().top +
+                      window.pageYOffset +
+                      yOffset;
+                    window.scrollTo({ top: y, behavior: "smooth" });
+                    setIsOpen(false); // close mobile menu if open
+                    setActiveLink(link.href);
+                  }
+                }}
               >
                 {link.name}
               </Link>
