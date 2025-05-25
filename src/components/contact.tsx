@@ -30,7 +30,6 @@ export default function Contact() {
         message: formRef.current?.message.value,
       };
 
-
       await emailjs.sendForm(
         "service_398aesa", // ✨ Replace with your EmailJS service ID
         "template_2hb8ofn", // ✨ Replace with your EmailJS template ID
@@ -63,12 +62,7 @@ export default function Contact() {
       value: "abhinabajana900@gmail.com",
       link: "mailto:abhinabajana900@gmail.com",
     },
-    {
-      icon: <Phone className="h-6 w-6 text-primary" />,
-      title: "Phone",
-      value: "+91 9831206232",
-      link: "tel:+919831206232",
-    },
+
     {
       icon: <MapPin className="h-6 w-6 text-primary" />,
       title: "Location",
@@ -99,7 +93,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {contactInfo.map((info, index) => (
             <motion.div
               key={info.title}

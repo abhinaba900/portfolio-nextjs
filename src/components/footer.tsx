@@ -94,7 +94,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Spacialties</h3>
+            <h3 className="text-lg font-semibold mb-4">Specialties</h3>
             <ul className="space-y-2">
               <li className="text-foreground/70">Web Development</li>
               <li className="text-foreground/70">Mobile Applications</li>
