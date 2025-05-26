@@ -75,6 +75,17 @@ export default function Projects() {
       github: "https://github.com/abhinaba900/taskly_app",
       demo: "https://github.com/abhinaba900/taskly_app/releases/tag/taskly",
     },
+    {
+      id: 6,
+      title: "Coincap App",
+      description: `Coin Cap is a cryptocurrency tracking application that utilizes the CoinGecko API to fetch real-time data on various digital assets. It provides up-to-date information on a wide range of coins, including their current market value, price changes, market cap, and more.`,
+      image:
+        "https://github.com/abhinaba900/coincap_app/blob/main/assets/images/Screenshot%202025-05-26%20172548.png?raw=true",
+      tags: ["Flutter", "Dart", "dio", "get_it", "CoinGecko API"],
+      category: "mobile",
+      github: "https://github.com/abhinaba900/coincap_app/tree/main",
+      demo: "https://github.com/abhinaba900/coincap_app/releases/tag/coincap_app",
+    },
   ];
 
   const filteredProjects =
