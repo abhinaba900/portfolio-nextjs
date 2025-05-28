@@ -86,6 +86,17 @@ export default function Projects() {
       github: "https://github.com/abhinaba900/coincap_app/tree/main",
       demo: "https://github.com/abhinaba900/coincap_app/releases/tag/coincap_app",
     },
+    {
+      id: 7,
+      title: "Friviaa App",
+      description: `Building a Flutter quiz app where users can select a difficulty level (Easy, Medium, or Hard) using a slider. The selected difficulty updates dynamically in the UI and can later be used to customize the quiz questions.`,
+      image:
+        "https://github.com/abhinaba900/friviaa/blob/main/assets/images/Screenshot%202025-05-28%20191225.png?raw=true",
+      tags: ["Flutter", "Dart", "dio", "get_it", "provider","Open Trivia API"],
+      category: "mobile",
+      github: "https://github.com/abhinaba900/friviaa",
+      demo: "https://github.com/abhinaba900/friviaa/releases/tag/friviaa",
+    },
   ];
 
   const filteredProjects =
